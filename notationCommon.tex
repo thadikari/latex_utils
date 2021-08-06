@@ -1,0 +1,167 @@
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+
+%\mathtoolsset{showonlyrefs=true}
+%\usepackage{filecontents}
+
+
+% works exactly as pragmaonce in C
+% https://tex.stackexchange.com/questions/195157/is-there-any-analog-to-pragma-once-in-latex
+\makeatletter
+\let\pragma@iinput=\@iinput
+\def\@iinput#1{\xdef\@pragmafile{#1}\pragma@iinput{#1}}
+\def\@pragmafile{default}
+\def\pragmaonce{%
+	\csname pragma@\@pragmafile\endcsname
+	\global\expandafter\let \csname pragma@\@pragmafile\endcsname = \endinput
+}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%% generic notations
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\maximize}{maximize}
+\DeclareMathOperator*{\sign}{sgn}
+
+\ifdefined\ceil
+\else
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+\fi
+\DeclarePairedDelimiterX{\inprd}[2]{\langle}{\rangle}{#1, #2}
+\newcommand{\inprdS}[2]{\left\langle#1,#2\right\rangle}
+
+
+\newcommand{\ellnrm}[1]{\ell_{#1}}
+\newcommand{\LnrmS}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\Lnrm}[1]{\lVert #1 \rVert}
+\newcommand{\Lzro}[1]{\lVert #1 \rVert_0}
+\newcommand{\Lone}[1]{\lVert #1 \rVert_1}
+\newcommand{\Ltwo}[1]{\lVert #1 \rVert_2}
+\newcommand{\Linf}[1]{\lVert #1 \rVert_\infty}
+
+\newcommand{\EV}{{\mathbb{E}}}
+\newcommand{\EVS}[1]{{\mathbb{E}\left[#1\right]}}
+\newcommand{\Var}{\mathbb{V}}
+\newcommand{\Rel}{\mathbb{R}}
+\newcommand{\nball}{B_\epsilon}
+
+\newcommand{\arnn}[1]{\xrightarrow{\text{#1}}}
+\newcommand{\nballex}{\nball_{\infty, \epsilon}}
+\newcommand{\bigO}{\mathcal{O}}
+\newcommand{\indctr}{\mathbbm{1}}
+\newcommand{\allones}{\mathbf{1}}
+\newcommand{\allzeros}{\mathbf{0}}
+\newcommand{\iid}{i.i.d.}
+%https://tex.stackexchange.com/questions/74125/how-do-i-put-text-over-symbols
+\newcommand{\defn}{\mathrel{\overset{\makebox[0pt]{\mbox{\normalfont\tiny\sffamily def}}}{=}}}
+%\newcommand{\defn}{{\triangleq}}%\coloneqq
+
+
+
+%%%%%%%%%%%%%%%%%% caliographic chars
+\newcommand{\cc}[1]{\mathcal{#1}}
+\newcommand{\calX}{\cc{X}}
+\newcommand{\calY}{\cc{Y}}
+\newcommand{\calD}{\cc{D}}
+\newcommand{\calA}{\cc{A}}
+\newcommand{\calU}{\cc{U}}
+\newcommand{\calV}{\cc{V}}
+\newcommand{\calE}{\cc{E}}
+\newcommand{\calM}{\cc{M}}
+\newcommand{\calG}{\cc{G}}
+\newcommand{\calT}{\cc{T}}
+\newcommand{\calS}{\cc{S}}
+\newcommand{\calB}{\cc{B}}
+\newcommand{\calW}{\cc{W}}
+\newcommand{\calN}{\cc{N}}
+\newcommand{\calF}{\cc{F}}
+
+
+
+%%%%%%%%%%%%%%%%%% text handling
+\newcommand{\emphtwo}[1]{{\textit{#1}}}
+\newcommand{\emphone}[1]{{\textbf{#1}}}
+\newcommand{\Cred}[1]{{\color{red}{#1}}}
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+\newcommand{\Cgrn}[1]{{\color{darkgreen}{#1}}}
+\newcommand{\Cblue}[1]{{\color{blue}{#1}}}
+\newcommand{\bluetria}{\textcolor[HTML]{00008b}{$\blacktriangleright~$}}    % beamer bullet
+
+%%%%%%%%%%%%%%%%%% strike out for both text and math mode
+% https://tex.stackexchange.com/questions/20609/strikeout-in-math-mode
+\newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
+
+
+
+
+%%%%%%%%%%%%%%%%%% sections/counter handling
+\newcommand{\fig}[1]{{Fig.~\ref{fig:#1}}}
+\newcommand{\tbl}[1]{{Table~\ref{tbl:#1}}}
+\newcommand{\secn}[1]{{Sec.~\ref{secn:#1}}}
+\newcommand{\apdx}[1]{{App.~\ref{secn:#1}}}
+\newcommand{\chap}[1]{{Chapter~\ref{secn:#1}}}
+\newcommand{\deftn}[1]{{Definition~\ref{deftn:#1}}}
+\newcommand{\thrm}[1]{{Theorem~\ref{thrm:#1}}}
+\newcommand{\colly}[1]{{Corollary~\ref{colly:#1}}}
+\newcommand{\lmma}[1]{{Lemma~\ref{lmma:#1}}}
+\newcommand{\algo}[1]{{Alg.~\ref{algo:#1}}}
+% \newcommand{\eqn}[1]{{(\ref{eqn:#1})}}
+% https://tex.stackexchange.com/questions/196446/how-to-number-only-labeled-equations
+\newcommand{\eqn}[1]{{\eqref{eqn:#1}}}
+\newcommand{\citepage}[1]{{{p.~#1}}}
+
+\newcommand{\bullettopic}[1]{{\noindent\emph{$\bullet$ #1}}}
+\newcommand{\nobullettopic}[1]{{\noindent\emph{#1}}}
+\newcommand{\boldtopic}[1]{~\\\noindent{\bf{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%  counters for theorems/lemma/definitions
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+
+
+%%%%%%%%%%%%%%%%%%  check-if-counter-exists
+% https://tex.stackexchange.com/questions/155776/check-if-counter-exists
+% \ifcounter{chapter}{exists}{doesn't exist}
+\makeatletter
+\newcommand*\ifcounter[1]{%
+	\ifcsname c@#1\endcsname
+	\expandafter\@firstoftwo
+	\else
+	\expandafter\@secondoftwo
+	\fi
+}
+\makeatother
+
+
+
+%%%%%%%%%%%%%%%%%% following are already defined for beamer template
+% https://tex.stackexchange.com/questions/41496/how-to-define-an-environment-only-if-it-is-not-defined-yet-using-etoolbox
+\ifcsmacro{theorem}{}{
+
+	\ifcounter{chapter}{
+		\def\theoremresetcounter{chapter}
+	}{
+		\def\theoremresetcounter{section}
+	}
+	
+	\newtheorem{theorem}{Theorem}%[\theoremresetcounter]
+	\newtheorem{definition}{Definition}%[\theoremresetcounter]
+	\newtheorem{lemma}{Lemma}%[\theoremresetcounter]
+	\newtheorem{corollary}{Corollary}%[\theoremresetcounter]
+	\newtheorem{assumption}{Assumption}%[\theoremresetcounter]
+	
+	\newcounter{example}[section]
+	\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+		\textbf{Example~\thesection.\theexample. #1} \rmfamily}{\medskip}
+	\newcounter{problem}[section]
+	\newenvironment{problem}[1][]{\refstepcounter{problem}\par\medskip
+		\textbf{Problem~\thesection.\theproblem. #1} \rmfamily}{\medskip}
+}
+
+
+\def\enumtheoremstart{\begin{enumerate}[noitemsep,label=(\roman*)]}
+	\def\enumtheoremend{\end{enumerate}}
+\newcommand\enumtheorem[1]{\enumtheoremstart#1\enumtheoremend}

@@ -1,0 +1,54 @@
+% https://tex.stackexchange.com/questions/251186/is-there-a-way-to-toggle-comments
+% https://tex.stackexchange.com/questions/3336/is-it-catcode-or-catcode
+%\usepackage{polyglossia}\setmainlanguage{english}
+%\ifshowcomments\catcode`ༀ=9 % ignored
+%\else\catcode`ༀ=14 % comments
+%\fi
+
+\usepackage{transparent}
+
+
+\newif\ifshowcomments
+\newif\ifshowdeleted
+
+
+%\showcommentstrue % uncomment to show the comments
+%\showdeletedtrue % uncomment to show the delete marked sections
+
+\newcommand{\tcr}[1]{{\color{red}#1}}
+\newcommand{\tcb}[1]{{\color{blue}#1}}
+\newcommand{\tcg}[1]{{\color{darkgreen}#1}}
+\newcommand{\tco}[1]{{\color{darkorange}#1}}
+
+\newcommand{\new}[1]{{\tcb{#1}}}
+\newcommand{\attn}[1]{{\tcr{#1}}}
+
+\newcommand{\devnull}[1]{}
+\newcommand{\delete}[1]{{\ifshowdeleted{{\transparent{0.3}#1}}\else\unskip\ignorespaces\fi}}
+\newcommand{\comment}[2][]{\ifshowcomments{\printcomment{#1}{#2}}\else\ignorespaces\fi}
+\newcommand{\printcomment}[2]{\incolor{#1}{[[\ifx#1\empty\else#1: \fi#2]]}}
+% \newcommand{\new}{\marginpar{NEW}}
+
+
+%%%%%%%%%%%%%% Helper macros %%%%%%%%%%%%%%
+% https://tex.stackexchange.com/questions/53068/how-to-check-if-a-macro-value-is-empty-or-will-not-create-text-with-plain-tex-co
+% https://tex.stackexchange.com/questions/64131/implementing-switch-cases
+
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
+\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+
+
+\definecolor{darkred}{rgb}{0.8, 0.01, 0.1}
+\definecolor{darkgreen}{rgb}{0.0, 0.5, 0.0}
+\definecolor{darkorange}{rgb}{0.93, 0.35, 0.1}
+
+\newcommand{\incolor}[2]{\ignorespaces
+	\begin{switch}{#1}\ignorespaces
+		\case{TA}{\color{darkred}}\ignorespaces
+		\case{SD}{\color{darkorange}}\ignorespaces
+		\case{SK}{\color{darkgreen}}\ignorespaces
+		\case{}{\color{red}}\ignorespaces
+		#2
+	\end{switch}
+}
