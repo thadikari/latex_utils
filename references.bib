@@ -82,7 +82,7 @@
 @string{prl	= "Phys.\ Rev.\ Lett."}
 @string{pra	= "Phys.\ Rev.\ A"}
 @string{gcom    = "Proc.\ IEEE GLOBECOM"}
-@string{infocomm    = "Proc.\ IEEE INFOCOMM"}
+@string{infocomm    = "IEEE Int. Conf. Computer Communications"}
 @string{tvt     = "IEEE Trans.\ Vehic.\ Technol."}
 @string{tnet    = "IEEE/ACM Trans.\ Networking"}
 @string{el      = "Electron.\ Lett."}
@@ -184,6 +184,49 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Journal articles and conference papers
 
+@article{slepian1973noiseless,
+	title={Noiseless coding of correlated information sources},
+	author={Slepian, David and Wolf, Jack},
+	journal=tinfo,
+	volume={19},
+	number={4},
+	pages={471--480},
+	year={1973},
+	publisher={IEEE}
+}
+
+@article{wyner1976rate,
+	title={The rate-distortion function for source coding with side information at the decoder},
+	author={Wyner, Aaron and Ziv, Jacob},
+	journal=tinfo,
+	volume={22},
+	number={1},
+	pages={1--10},
+	year={1976},
+	publisher={IEEE}
+}
+
+@article{korner1979encode,
+	title={How to encode the modulo-two sum of binary sources},
+	author={K{\"o}rner, Janos and Marton, Katalin},
+	journal=tinfo,
+	volume={25},
+	number={2},
+	pages={219--221},
+	year={1979},
+	publisher={IEEE}
+}
+
+@inproceedings{schroeder1981rate,
+	title={Rate distortion theory and predictive coding},
+	author={Schroeder, M and Atal, B},
+	booktitle=icassp,
+	volume={6},
+	pages={201--204},
+	year={1981},
+	organization={IEEE}
+}
+
 @article{lloyd1982least,
 	title={Least squares quantization in {PCM}},
 	author={Lloyd, Stuart},
@@ -213,6 +256,17 @@
 	publisher={IEEE}
 }
 
+@article{zamir2002nested,
+	title={Nested linear/lattice codes for structured multiterminal binning},
+	author={Zamir, Ram and Shamai, Shlomo and Erez, Uri},
+	journal=tinfo,
+	volume={48},
+	number={6},
+	pages={1250--1276},
+	year={2002},
+	publisher={IEEE}
+}
+
 @inproceedings{kempe2003gossip,
 	title={Gossip-based computation of aggregate information},
 	author={Kempe, David and Dobra, Alin and Gehrke, Johannes},
@@ -222,6 +276,17 @@
 	year={2003}
 }
 
+@article{pradhan2003distributed,
+	title={Distributed source coding using syndromes (DISCUS): Design and construction},
+	author={Pradhan, S Sandeep and Ramchandran, Kannan},
+	journal=tinfo,
+	volume={49},
+	number={3},
+	pages={626--643},
+	year={2003},
+	publisher={IEEE}
+}
+
 @inproceedings{rabenseifner2004optimization,
 	title={Optimization of collective reduction operations},
 	author={Rabenseifner, Rolf},
@@ -229,6 +294,17 @@
 	address={Berlin},
 	month={Jun},
 	year={2004}
+}
+
+@article{thakur2005optimization,
+	title={Optimization of collective communication operations in MPICH},
+	author={Thakur, Rajeev and Rabenseifner, Rolf and Gropp, William},
+	journal={Int. J. of High Performance Computing Applications},
+	volume={19},
+	number={1},
+	pages={49--66},
+	year={2005},
+	publisher={Sage Publications, Thousand Oaks, CA}
 }
 
 @article{xiao2007distributed,
@@ -268,10 +344,32 @@
 	year={2008}
 }
 
+@article{krithivasan2009lattices,
+	title={Lattices for distributed source coding: Jointly Gaussian sources and reconstruction of a linear function},
+	author={Krithivasan, Dinesh and Pradhan, S Sandeep},
+	journal=tinfo,
+	volume={55},
+	number={12},
+	pages={5628--5651},
+	year={2009},
+	publisher={IEEE}
+}
+
+@article{steinberg2009coding,
+	title={Coding and common reconstruction},
+	author={Steinberg, Yossef},
+	journal=tinfo,
+	volume={55},
+	number={11},
+	pages={4995--5010},
+	year={2009},
+	publisher={IEEE}
+}
+
 @article{patarasuk2009bandwidth,
 	title={Bandwidth optimal all-reduce algorithms for clusters of workstations},
 	author={Patarasuk, Pitch and Yuan, Xin},
-	journal={Journal of Parallel and Distributed Computing},
+	journal={J. of Parallel and Distributed Computing},
 	pages={117--124},
 	year={2009},
 	month={Feb},
@@ -402,11 +500,27 @@
 	year={2014}
 }
 
+@inproceedings{sefidgaran2015korner,
+	title={On K{\"o}rner-Marton's sum modulo two problem},
+	author={Sefidgaran, Milad and Gohari, Amin and Aref, Mohammad Reza},
+	booktitle={Iran Workshop on Communication and Information Theory},
+	pages={1--6},
+	year={2015},
+	organization={IEEE}
+}
+
 @inproceedings{strom2015scalable,
 	title={Scalable distributed {DNN} training using commodity {GPU} cloud computing},
 	author={Strom, Nikko},
 	booktitle={Conf. Int. Speech Comm. Association},
 	year={2015}
+}
+
+@article{ohno2016rate,
+	title={Rate-Distortion analysis of quantizers with error feedback},
+	author={Ohno, Shuichi and Shiraki, Teruyuki and Tariq, M Rizwan and Nagahara, Masaaki},
+	journal={arXiv preprint arXiv:1609.01383},
+	year={2016}
 }
 
 @article{lessard2016analysis,
@@ -524,6 +638,13 @@
 	year={2017}
 }
 
+@article{yu2017polynomial,
+	title={Polynomial codes: an optimal design for high-dimensional coded matrix multiplication},
+	author={Yu, Qian and Maddah-Ali, Mohammad Ali and Avestimehr, A Salman},
+	booktitle=nips,
+	year={2017}
+}
+
 @inproceedings{stich2018sparsified,
 	title={Sparsified {SGD} with memory},
 	author={Stich, Sebastian U and Cordonnier, Jean-Baptiste and Jaggi, Martin},
@@ -556,6 +677,15 @@
 @inproceedings{yu2018gradiveq,
 	title={Gradiveq: Vector quantization for bandwidth-efficient gradient aggregation in distributed cnn training},
 	author={Yu, Mingchao and Lin, Zhifeng and Narra, Krishna and Li, Songze and Li, Youjie and Kim, Nam Sung and Schwing, Alexander and Annavaram, Murali and Avestimehr, Salman},
+	booktitle=nips,
+	month={Dec},
+	address={Montréal},
+	year={2018}
+}
+
+@article{chen2018lag,
+	title={LAG: Lazily aggregated gradient for communication-efficient distributed learning},
+	author={Chen, Tianyi and Giannakis, Georgios B and Sun, Tao and Yin, Wotao},
 	booktitle=nips,
 	month={Dec},
 	address={Montréal},
@@ -625,6 +755,23 @@
 	address={Stockholm},
 	month={Jun},
 	year={2018}
+}
+
+
+@inproceedings{kiani2018Exploitation,
+	title={Exploitation of stragglers in coded computation},
+	author={Kiani, Shahrzad and Ferdinand, Nuwan and Draper, Stark C},
+	booktitle=isit,
+	year={2018},
+}
+
+@inproceedings{lim2019towards,
+	title={Towards an Algebraic Network Information Theory: Distributed Lossy Computation of Linear Functions},
+	author={Lim, Sung Hoon and Feng, Chen and Pastore, Adriano and Nazer, Bobak and Gastpar, Michael},
+	booktitle=isit,
+	pages={1827--1831},
+	year={2019},
+	organization={IEEE}
 }
 
 @inproceedings{ferdinand2018anytime,
@@ -734,6 +881,34 @@
 	year={2019}
 }
 
+@inproceedings{abdi2019reducing,
+	title={Reducing communication overhead via {CEO} in distributed training},
+	author={Abdi, Afshin and Fekri, Faramarz},
+	booktitle={IEEE Int. Workshop on Signal Processing Advances in Wireless Communications},
+	pages={1--5},
+	month={Jul},
+	year={2019},
+	organization={IEEE}
+}
+
+@article{dutta2019optimal,
+	title={On the optimal recovery threshold of coded matrix multiplication},
+	author={Dutta, Sanghamitra and Fahim, Mohammad and Haddadpour, Farzin and Jeong, Haewon and Cadambe, Viveck and Grover, Pulkit},
+	journal=tinfo,
+	volume={66},
+	number={1},
+	pages={278--301},
+	year={2019},
+	publisher={IEEE}
+}
+
+@article{eghlidi2020sparse,
+	title={Sparse communication for training deep networks},
+	author={Eghlidi, Negar Foroutan and Jaggi, Martin},
+	journal={arXiv preprint arXiv:2009.09271},
+	year={2020}
+}
+
 @article{phuong2020distributed,
 	title={Distributed SGD with flexible gradient compression},
 	author={Phuong, Tran Thi and Phuong, Le Trieu},
@@ -831,6 +1006,40 @@
 	year={2021},
 	doi={10.1109/JSAIT.2021.3103494}
 }
+
+@inproceedings{fei2021efficient,
+	title={Efficient sparse collective communication and its application to accelerate distributed deep learning},
+	author={Fei, Jiawei and Ho, Chen-Yu and Sahu, Atal N and Canini, Marco and Sapio, Amedeo},
+	booktitle={Proc. ACM SIGCOMM},
+	pages={676--691},
+	year={2021}
+}
+
+@article{abrahamyan2021learned,
+	title={Learned Gradient Compression for Distributed Deep Learning},
+	author={Abrahamyan, Lusine and Chen, Yiming and Bekoulis, Giannis and Deligiannis, Nikos},
+	journal={IEEE Trans. Neural Networks and Learning Systems},
+	year={2021},
+	publisher={IEEE}
+}
+
+@inproceedings{shi2021exploiting,
+	title={Exploiting Simultaneous Communications to Accelerate Data Parallel Distributed Deep Learning},
+	author={Shi, Shaohuai and Chu, Xiaowen and Li, Bo},
+	booktitle=infocomm,
+	pages={1--10},
+	year={2021},
+	organization={IEEE}
+}
+
+@inproceedings{mayekar2021wyner,
+	title={Wyner-Ziv Estimators: Efficient Distributed Mean Estimation with Side-Information},
+	author={Mayekar, Prathamesh and Suresh, Ananda Theertha and Tyagi, Himanshu},
+	booktitle=aistats,
+	pages={3502--3510},
+	year={2021}
+}
+
 
 
 
