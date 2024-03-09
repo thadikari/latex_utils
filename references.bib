@@ -78,7 +78,7 @@
 @string{cpam	= "Commun. Pure Appl.\ Math."}
 @string{siamr	= "SIAM Rev."}
 @string{ams     = "Trans.\ Amer.\ Math.\ Soc."}
-@string{siamr	= "SIAM Rev."}
+@string{siamopt   = "SIAM J. on optimization"}
 @string{prl	= "Phys.\ Rev.\ Lett."}
 @string{pra	= "Phys.\ Rev.\ A"}
 @string{gcom    = "Proc.\ IEEE GLOBECOM"}
@@ -107,6 +107,15 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Books
+
+@article{robbins1951stochastic,
+	title={A stochastic approximation method},
+	author={Robbins, Herbert and Monro, Sutton},
+	journal={The annals of mathematical statistics},
+	pages={400--407},
+	year={1951},
+	publisher={JSTOR}
+}
 
 @phdthesis{goblick1963coding,
 	title={Coding for a discrete information source with a distortion measure},
@@ -189,6 +198,16 @@
 	author={Wannamaker, Robert Alexander},
 	year={1997},
 	publisher={University of Waterloo}
+}
+
+@article{eon1998online,
+	title={Online learning and stochastic approximations},
+	author={Leon Bottou},
+	journal={Online learning in neural networks},
+	volume={17},
+	number={9},
+	pages={142},
+	year={1998}
 }
 
 @book{cover1999elements,
@@ -501,6 +520,17 @@
 	publisher={Springer}
 }
 
+@article{nemirovski2009robust,
+	title={Robust stochastic approximation approach to stochastic programming},
+	author={Nemirovski, Arkadi and Juditsky, Anatoli and Lan, Guanghui and Shapiro, Alexander},
+	journal=siamopt,
+	volume={19},
+	number={4},
+	pages={1574--1609},
+	year={2009},
+	publisher={SIAM}
+}
+
 @article{zaharia2010spark,
 	title={Spark: {C}luster computing with working sets},
 	author={Zaharia, Matei and Chowdhury, Mosharaf and Franklin, Michael J and Shenker, Scott and Stoica, Ion},
@@ -618,6 +648,17 @@
 	year={2012}
 }
 
+@article{ghadimi2012optimal,
+	title={Optimal stochastic approximation algorithms for strongly convex stochastic composite optimization {I}: {A} generic algorithmic framework},
+	author={Ghadimi, Saeed and Lan, Guanghui},
+	journal=siamopt,
+	volume={22},
+	number={4},
+	pages={1469--1492},
+	year={2012},
+	publisher={SIAM}
+}
+
 @inproceedings{krizhevsky2012imagenet,
 	title={{ImageNet} classification with deep convolutional neural networks},
 	author={Krizhevsky, Alex and Sutskever, Ilya and Hinton, Geoffrey E.},
@@ -669,6 +710,17 @@
 	author={Zhao, Huasha and Canny, John},
 	journal={arXiv preprint arXiv:1312.3020},
 	year={2013}
+}
+
+@article{ghadimi2013stochastic,
+	title={Stochastic first-and zeroth-order methods for nonconvex stochastic programming},
+	author={Ghadimi, Saeed and Lan, Guanghui},
+	journal=siamopt,
+	volume={23},
+	number={4},
+	pages={2341--2368},
+	year={2013},
+	publisher={SIAM}
 }
 
 @inproceedings{sutskever2013importance,
@@ -797,7 +849,7 @@
 @article{lessard2016analysis,
 	title={Analysis and design of optimization algorithms via integral quadratic constraints},
 	author={Lessard, Laurent and Recht, Benjamin and Packard, Andrew},
-	journal={SIAM J. on Optimization},
+	journal=siamopt,
 	year={2016},
 	month={Jan},
 	pages={57--95}
@@ -841,6 +893,26 @@
 	author={Kone{\v{c}}n{\`y}, Jakub and McMahan, H Brendan and Yu, Felix X and Richt{\'a}rik, Peter and Suresh, Ananda Theertha and Bacon, Dave},
 	journal={arXiv preprint arXiv:1610.05492},
 	year={2016}
+}
+
+@inproceedings{mcmahan2017communication,
+	title={Communication-efficient learning of deep networks from decentralized data},
+	author={McMahan, Brendan and Moore, Eider and Ramage, Daniel and Hampson, Seth and y Arcas, Blaise Aguera},
+	booktitle=aistats,
+	pages={1273--1282},
+	year={2017},
+	organization={PMLR}
+}
+
+@article{lee2017speeding,
+	title={Speeding up distributed machine learning using codes},
+	author={Lee, Kangwook and Lam, Maximilian and Pedarsani, Ramtin and Papailiopoulos, Dimitris and Ramchandran, Kannan},
+	journal=tinfo,
+	volume={64},
+	number={3},
+	pages={1514--1529},
+	year={2017},
+	publisher={IEEE}
 }
 
 @article{lin2017deep,
@@ -943,6 +1015,15 @@
 	address={Montréal},
 	pages={4447--4458},
 	year={2018}
+}
+
+@inproceedings{dutta2018unified,
+	title={A unified coded deep neural network training strategy based on generalized polydot codes},
+	author={Dutta, Sanghamitra and Bai, Ziqian and Jeong, Haewon and Low, Tze Meng and Grover, Pulkit},
+	booktitle=isit,
+	pages={1585--1589},
+	year={2018},
+	organization={IEEE}
 }
 
 @inproceedings{wang2018atomo,
@@ -1061,6 +1142,17 @@
 	author={Kiani, Shahrzad and Ferdinand, Nuwan and Draper, Stark C.},
 	booktitle=isit,
 	year={2018},
+}
+
+@article{amiri2019computation,
+	title={Computation scheduling for distributed machine learning with straggling workers},
+	author={Amiri, Mohammad Mohammadi and G{\"u}nd{\"u}z, Deniz},
+	journal=tsp,
+	volume={67},
+	number={24},
+	pages={6270--6284},
+	year={2019},
+	publisher={IEEE}
 }
 
 @article{reisizadeh2019robust,
@@ -1224,6 +1316,15 @@
 	organization={IEEE}
 }
 
+@inproceedings{ozfatura2019distributed,
+	title={Distributed gradient descent with coded partial gradient computations},
+	author={Ozfatura, Emre and Ulukus, Sennur and G{\"u}nd{\"u}z, Deniz},
+	booktitle=icassp,
+	pages={3492--3496},
+	year={2019},
+	organization={IEEE}
+}
+
 @article{dutta2019optimal,
 	title={On the optimal recovery threshold of coded matrix multiplication},
 	author={Dutta, Sanghamitra and Fahim, Mohammad and Haddadpour, Farzin and Jeong, Haewon and Cadambe, Viveck and Grover, Pulkit},
@@ -1235,12 +1336,34 @@
 	publisher={IEEE}
 }
 
+@article{ozfatura2020straggler,
+	title={Straggler-aware distributed learning: {C}ommunication--computation latency trade-off},
+	author={Ozfatura, Emre and Ulukus, Sennur and G{\"u}nd{\"u}z, Deniz},
+	journal={Entropy},
+	volume={22},
+	number={5},
+	pages={544},
+	year={2020},
+	publisher={MDPI}
+}
+
 @inproceedings{karimireddy2020scaffold,
 	title={Scaffold: {S}tochastic controlled averaging for federated learning},
 	author={Karimireddy, Sai Praneeth and Kale, Satyen and Mohri, Mehryar and Reddi, Sashank and Stich, Sebastian and Suresh, Ananda Theertha},
 	booktitle=icml,
 	pages={5132--5143},
 	year={2020}
+}
+
+@article{bitar2020stochastic,
+	title={Stochastic gradient coding for straggler mitigation in distributed learning},
+	author={Bitar, Rawad and Wootters, Mary and El Rouayheb, Salim},
+	journal=jsait,
+	volume={1},
+	number={1},
+	pages={277--291},
+	year={2020},
+	publisher={IEEE}
 }
 
 @article{eghlidi2020sparse,
